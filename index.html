@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Fujii Hospital Care Guide</title>
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="page-home" class="page active">
+  <div class="home-container">
+    <button class="home-fav-btn" onclick="showFavorites()">⭐</button>
+    <img src="images/logo.jpg" alt="Logo" class="home-logo">
+    <div class="home-title">Practical Care Guide</div>
+    <div class="home-subtitle">คู่มือการปฏิบัติงานดูแลผู้สูงอายุ</div>
+    <div class="home-subtitle-jp">介護実務ガイド ・ 藤井病院</div>
+    <div class="lang-buttons">
+      <button class="lang-btn th" onclick="showTopicList('th')">🇹🇭 ภาษาไทย</button>
+      <button class="lang-btn en" onclick="showTopicList('en')">🇬🇧 English</button>
+      <button class="lang-btn jp" onclick="showTopicList('jp')">🇯🇵 日本語</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== TOPIC LIST PAGE ==================== -->
+<div id="page-topic-list" class="page">
+  <div class="header-bar">
+    <button class="back-btn" onclick="goHome()">←</button>
+    <span class="title" id="topic-list-title"></span>
+    <button class="home-fav-btn" style="position:static;width:38px;height:38px;font-size:18px;" onclick="showFavorites()">⭐</button>
+  </div>
+  <div class="topic-list-container">
+    <div id="topic-list-badge" class="version-badge"></div>
+    <div class="topic-grid" id="topic-grid"></div>
+  </div>
+</div>
+
+<!-- ==================== DETAIL PAGE ==================== -->
+<div id="page-detail" class="page">
+  <div class="header-bar">
+    <button class="back-btn" id="detail-back-btn">←</button>
+    <span class="title" id="detail-title"></span>
+    <button class="fav-btn" id="detail-fav-btn" onclick="toggleFavorite()">☆</button>
+  </div>
+  <div class="detail-container" id="detail-content"></div>
+</div>
+
+<!-- ==================== FAVORITES PAGE ==================== -->
+<div id="page-favorites" class="page">
+  <div class="header-bar">
+    <button class="back-btn" onclick="goBackFromFav()">←</button>
+    <span class="title">⭐ My Favorites</span>
+  </div>
+  <div class="fav-container" id="fav-list"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
